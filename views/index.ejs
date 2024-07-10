@@ -12,6 +12,7 @@
   <div class="container">
     <h1>Let's find something for you to do ✌️</h1>
 
+    <!-- Form for filtering activities by type and participants -->
     <form action="/" id="form" class="form" method="POST">
       <select name="type" class="form-select">
         <option value="" data-display="Select">Random type</option>
@@ -34,9 +35,10 @@
       <button type="submit" class="form-submit">Go</button>
     </form>
 
+    <!-- Section to display the activity card or an error message -->
     <section id="cards" class="cards">
-
       <% if (locals.data) { %>
+        <!-- Display the activity card if data is available -->
         <article class="card-item">
           <h2 class="card-activity">
             <%= data.activity %>
@@ -52,14 +54,13 @@
           </div>
         </article>
       <% } else { %>
+        <!-- Display an error message if no data is available -->
         <div id="tag-error" class="tag-error">
-        <%= error %>
-      </div>
+          <%= error %>
+        </div>
       <% } %>
-
     </section>
   </div>
-
 </body>
 
 </html>
